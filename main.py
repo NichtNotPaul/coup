@@ -2,7 +2,7 @@ import ollama
 
 def main():
     # Model name
-    model = "gpt-oss:20b"
+    model = "huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
     
     # Simple prompt
     prompt = "Explain quantum computing in 2-3 sentences."
@@ -13,7 +13,17 @@ def main():
     
     try:
         # Generate response
-        response = ollama.generate(model=model, prompt=prompt)
+        response = ollama.generate(
+    model="gpt-oss:20b",
+    prompt=prompt,
+    options={
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k=20"
+        "min_p": 0,
+        "thinking": False
+    }
+)
         
         # Print the response
         print(response['response'])
