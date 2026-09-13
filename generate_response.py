@@ -6,9 +6,8 @@ def generate_response(prompt):
     
     # Simple prompt
     
-    print(f"Prompt: {prompt}\n")
-    print("-" * 50)
-    
+    print(f"\033[1;30mPrompt: {prompt}\033[0m")
+    print("-"*50)
     try:
         # Generate response
         response = ollama.generate(
@@ -23,18 +22,17 @@ def generate_response(prompt):
     }
 )
         
-        # Print the response
         print(response['response'])
-        print("-" * 50)
-        
-        # Optional: Print metadata
-        print(f"\nModel: {response['model']}")
+        print("-"*50)
+
+        print(f"\033[1;37mModel: {response['model']}")
         print(f"Total duration: {response['total_duration'] / 1e9:.2f} seconds")
         print(f"Load duration: {response['load_duration'] / 1e9:.2f} seconds")
         print(f"Prompt eval count: {response['prompt_eval_count']}")
-        print(f"Eval count: {response['eval_count']}")
+        print(f"Eval count: {response['eval_count']}\033[0m")
 
-        return()
+        return(response['response'])
+    
     except Exception as e:
         print(f"Error: {e}")
 
