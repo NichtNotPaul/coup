@@ -6,21 +6,20 @@ def generate_response(prompt):
     
     # Simple prompt
     
-    print(f"Using model: {model}")
     print(f"Prompt: {prompt}\n")
     print("-" * 50)
     
     try:
         # Generate response
         response = ollama.generate(
-    model="gpt-oss:20b",
+    model=model,
     prompt=prompt,
+    think=False,
     options={
         "temperature": 0.7,
         "top_p": 0.8,
-        "top_k=20"
+        "top_k": 20,
         "min_p": 0,
-        "thinking": False
     }
 )
         
@@ -34,7 +33,8 @@ def generate_response(prompt):
         print(f"Load duration: {response['load_duration'] / 1e9:.2f} seconds")
         print(f"Prompt eval count: {response['prompt_eval_count']}")
         print(f"Eval count: {response['eval_count']}")
-        
+
+        return()
     except Exception as e:
         print(f"Error: {e}")
 
