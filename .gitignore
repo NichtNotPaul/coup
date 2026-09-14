@@ -1,50 +1,50 @@
-# Byte-compiled / optimized / DLL files
+#Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
 
-# Virtual environments
+#Virtual environments
 .venv/
 venv/
 env/
 ENV/
 
-# Environment variables
+#Environment variables
 .env
 .envrc
 .config.py  # Your local config file
 
-# Distribution / packaging
+#Distribution / packaging
 build/
 dist/
 *.egg-info/
 *.egg
 
-# Installer logs
+#Installer logs
 pip-log.txt
 
-# Unit test / coverage reports
+#Unit test / coverage reports
 .coverage
 .coverage.*
 .pytest_cache/
 .hypothesis/
 
-# Django
+#Django
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-# Flask
+#Flask
 instance/
 
-# Jupyter Notebook
+#Jupyter Notebook
 .ipynb_checkpoints
 
-# IDE-specific (optional, uncomment if needed)
+#IDE-specific
  .vscode/
  .idea/
 
-# Local secrets (e.g., API keys)
+#user specific config/secrets
 config.py
 config.env
