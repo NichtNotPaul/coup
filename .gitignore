@@ -46,5 +46,5 @@ instance/
  .idea/
 
 # Local secrets (e.g., API keys)
-secrets.py
-secrets.env
+config.py
+config.env
