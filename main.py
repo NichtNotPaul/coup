@@ -1,2 +1,9 @@
 from generate_response import *
-print(generate_response("Explain quantum computing in 2-3 sentences."))
+from discord_bot import *
+from config import *
+
+def main():
+    discord_bot()
+
+if __name__ == "__main__":
+    main()

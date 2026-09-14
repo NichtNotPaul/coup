@@ -1,7 +1,7 @@
 import ollama
 
 def generate_response(prompt):
-    # Model name
+    
     model = "huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
     
     # Simple prompt
@@ -36,5 +36,5 @@ def generate_response(prompt):
     except Exception as e:
         print(f"Error: {e}")
 
-if __name__ == "__main__":
+if __name__ == "__generate_response__":
     generate_response()
