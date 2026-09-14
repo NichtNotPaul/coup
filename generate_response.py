@@ -1,17 +1,17 @@
 import ollama
-
+from config import systemprompt
 def generate_response(prompt):
-    
+
     model = "huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
     
     # Simple prompt
     
-    print(f"\033[1;30mPrompt: {prompt}\033[0m")
-    print("-"*50)
+
     try:
         # Generate response
         response = ollama.generate(
     model=model,
+    system=systemprompt,
     prompt=prompt,
     think=False,
     options={
@@ -20,8 +20,11 @@ def generate_response(prompt):
         "top_k": 20,
         "min_p": 0,
     }
-)
+)       
         
+        print(f"\033[1;30mPrompt: {prompt}\033[0m")
+        print("-"*50)
+
         print(response['response'])
         print("-"*50)
 
@@ -30,7 +33,7 @@ def generate_response(prompt):
         print(f"Load duration: {response['load_duration'] / 1e9:.2f} seconds")
         print(f"Prompt eval count: {response['prompt_eval_count']}")
         print(f"Eval count: {response['eval_count']}\033[0m")
-
+        
         return(response['response'])
     
     except Exception as e:

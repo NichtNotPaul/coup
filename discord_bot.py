@@ -1,6 +1,9 @@
 import discord
 from config import discord_token
 from generate_response import generate_response
+
+message_history = []
+
 def discord_bot():
     
     class MyClient(discord.Client):
@@ -9,12 +12,15 @@ def discord_bot():
 
         async def on_message(self, message):
 
+            message_history.append(f"{message.author} said:{message.content}")
+
             if message.author == self.user:
                 return
-            
-            print(f'Message from {message.author}: {message.content}')
 
-            response = generate_response(f'Message from {message.author}: {message.content}')
+            response = generate_response(f"""
+            Message History:{message_history}
+            
+            Latest message from {message.author}: {message.content}""")
             await message.channel.send(response)
 
     intents = discord.Intents.default()
