@@ -14,12 +14,12 @@ def discord_bot():
 
             message_history.append(f"{message.author} said:{message.content}")
 
-            if message.author == self.user:
+            if message.author == self.user or self.user not in message.mentions:
                 return
 
             response = generate_response(f"""
             Message History:{message_history}
-            
+
             Latest message from {message.author}: {message.content}""")
             await message.channel.send(response)
 
