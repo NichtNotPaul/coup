@@ -2,8 +2,7 @@ import ollama
 from config import systemprompt
 def generate_response(prompt):
 
-    model = "huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive:Q6_K"
-    
+    model = "https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
     # Simple prompt
     
 
