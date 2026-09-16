@@ -48,3 +48,6 @@ instance/
 #user specific config/secrets
 config.py
 config.env
+
+#notes
+notes.txt

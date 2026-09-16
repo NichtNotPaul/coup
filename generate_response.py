@@ -1,5 +1,7 @@
 import ollama
 from config import systemprompt
+from session_notes import current_notes
+
 def generate_response(prompt):
 
     model = "https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
@@ -11,7 +13,7 @@ def generate_response(prompt):
         response = ollama.generate(
     model=model,
     system=systemprompt,
-    prompt=prompt,
+    prompt=prompt + f"YOUR Notes from previous Sessions: {current_notes}",
     think=False,
     options={
         "temperature": 0.7,
