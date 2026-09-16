@@ -1,10 +1,11 @@
 import ollama
 from config import systemprompt
 from session_notes import current_notes
+from config import model
 
 def generate_response(prompt):
 
-    model = "https://huggingface.co/HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive:Q4_K_M"
+    model = model
     # Simple prompt
     
 
