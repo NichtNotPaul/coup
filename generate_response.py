@@ -1,11 +1,11 @@
 import ollama
 from config import systemprompt
 from session_notes import current_notes
-from config import model
+from config import ollama_model
 
 def generate_response(prompt):
 
-    model = model
+    model = ollama_model
     # Simple prompt
     
 
